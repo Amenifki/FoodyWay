@@ -9,22 +9,47 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { AdminGuard } from './admin-guard.guard';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { UpdateFoodComponent } from './components/pages/update-food/update-food.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent },
   { path: 'tag/:tag', component: HomeComponent },
-  {path:'food/:id', component:FoodPageComponent},
-  {path:'cart-page', component: CartPageComponent},
-  {path:'login', component: LoginPageComponent},
-  {path:'register', component: RegisterPageComponent},
-  {path:'checkout', component: CheckoutPageComponent, canActivate:[AuthGuard]},
-  {path:'payment', component: PaymentPageComponent, canActivate:[AuthGuard]},
-  {path:'track/:orderId', component: OrderTrackPageComponent, canActivate:[AuthGuard]},
+  { path: 'food/:id', component: FoodPageComponent },
+  {
+    path: 'cart-page',
+    component: CartPageComponent,
+  },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'register', component: RegisterPageComponent },
+  {
+    path: 'checkout',
+    component: CheckoutPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'payment',
+    component: PaymentPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'track/:orderId',
+    component: OrderTrackPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'unauthorized',
+    component: UnauthorizedComponent,
+  },
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'food/update/:id', component: UpdateFoodComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

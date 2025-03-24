@@ -1,24 +1,58 @@
-div{
+/* Style général du conteneur */
+
+.message-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400; /* Un poids de police plus équilibré */
   height: 15rem;
+  text-align: center; /* Centrer le texte */
+  color: #333; /* Couleur de texte plus douce */
+  background-color: #f9f9f9; /* Fond légèrement gris pour donner du contraste */
+  padding: 1rem 2rem;
+  border-radius: 8px; /* Bords arrondis pour un look moderne */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner du relief */
 }
 
-a{
+/* Lien */
+a {
   font-size: 1.1rem;
-  background-color: #ff0000;
+  background-color: #ff9900; /* Une nuance de rouge moins agressive */
   color: white;
-  border-radius: 10rem;
-  padding: 0.7rem 1rem;
-  margin: 1rem;
-  opacity: 0.8;
+  border-radius: 20px; /* Bords arrondis pour un aspect plus doux */
+  padding: 0.7rem 1.2rem;
+  margin-top: 1rem;
+  opacity: 0.9; /* Moins transparent que l'original */
+  text-transform: uppercase; /* Mettre le lien en majuscule pour plus de visibilité */
+  letter-spacing: 1px; /* Espacement entre les lettres */
+  font-weight: 600; /* Un poids de police plus audacieux */
+  transition: all 0.3s ease; /* Animation fluide sur le survol */
 }
 
-a:hover{
+/* Effet au survol du lien */
+a:hover {
   opacity: 1;
+  background-color: #d48b1c; /* Un rouge plus foncé sur le survol */
+  transform: scale(
+    1.05
+  ); /* Légère augmentation de la taille du bouton au survol */
   cursor: pointer;
+}
+
+/* Optionnel : animation de transition sur le message */
+.message-container {
+  animation: fadeIn 0.5s ease-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Commence un peu plus bas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

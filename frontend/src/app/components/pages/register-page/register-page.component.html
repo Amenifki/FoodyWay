@@ -1,52 +1,63 @@
-<div class="container">
+<div class="form-container">
   <div class="details">
     <app-title title="Register"></app-title>
+
     <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <!-- Nom -->
       <text-input
-      [control]="fc.name"
-      [showErrorsWhen]="isSubmitted"
-      label="Name">
-    `</text-input>
+        [control]="fc.name"
+        [showErrorsWhen]="isSubmitted"
+        label="Name"
+        aria-label="Name"
+      ></text-input>
 
-    <text-input
-    [control]="fc.email"
-    [showErrorsWhen]="isSubmitted"
-    label="Email"
-    type="email">
-  `</text-input>
+      <!-- Email -->
+      <text-input
+        [control]="fc.email"
+        [showErrorsWhen]="isSubmitted"
+        label="Email"
+        type="email"
+        aria-label="Email"
+      ></text-input>
 
+      <!-- Mot de passe -->
+      <text-input
+        [control]="fc.password"
+        [showErrorsWhen]="isSubmitted"
+        label="Password"
+        type="password"
+        aria-label="Password"
+      ></text-input>
 
-  <text-input
-  [control]="fc.password"
-  [showErrorsWhen]="isSubmitted"
-  label="Password"
-  type="password">
-`</text-input>
+      <!-- Confirmation du mot de passe -->
+      <text-input
+        [control]="fc.confirmPassword"
+        [showErrorsWhen]="isSubmitted"
+        label="Confirm Password"
+        type="password"
+        aria-label="Confirm Password"
+      ></text-input>
 
-<text-input
-[control]="fc.confirmPassword"
-[showErrorsWhen]="isSubmitted"
-label="Confirm Password"
-type="password">
-`</text-input>
+      <!-- Adresse -->
+      <text-input
+        [control]="fc.address"
+        [showErrorsWhen]="isSubmitted"
+        label="Address"
+        aria-label="Address"
+      ></text-input>
 
-<text-input
-[control]="fc.address"
-[showErrorsWhen]="isSubmitted"
-label="Address">
-`</text-input>
+      <!-- Bouton d'inscription -->
+      <button class="register-button" [disabled]="registerForm.invalid">
+        Register
+      </button>
 
-
-<default-button text="Register"></default-button>
-
-<div class="login">
-  Already a user? &nbsp;
-  <a routerLink="/login" [queryParams]="{returnUrl: returnUrl}">
-    Login Here
-  </a>
-</div>
-
-
+      <!-- Lien vers la connexion -->
+      <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here
+        </a>
+      </div>
     </form>
   </div>
 </div>

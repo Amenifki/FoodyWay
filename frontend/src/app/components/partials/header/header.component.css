@@ -1,66 +1,94 @@
-header{
+header {
   position: relative;
-  background: white;
-  padding: 0;
-  border-bottom: 1px solid #ffd000;
+  background: #ffffff;
+  padding: 1rem 0;
+  border-bottom: 2px solid #ffcc00;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-a{
-  color: #ffee00;
+a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-a:hover{
-  background:#ff9900;
-  color: white;
-  cursor: pointer;
+a:hover {
+  color: #ff6600;
 }
 
-.container{
+.container {
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-a.logo{
+a.logo {
   font-weight: bold;
-  padding: 1rem;
+  font-size: 1.5rem;
+  color: #ff9900;
 }
 
-ul{
+ul {
   display: flex;
   list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
-ul a{
-  padding: 1rem;
-  display: inline-block;
+ul a {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
-a span{
-  background: #ff0000;
-  color: white;
-  padding: 0.1rem 0.45rem;
-  border-radius: 100rem;
-  font-size:0.9rem;
+ul a:hover {
+  background: rgba(255, 165, 0, 0.1);
 }
 
-.menu-container{
+.cart-link {
   position: relative;
 }
 
-.menu{
-  position:absolute;
-  z-index:1;
-  background:whitesmoke;
+.cart-link span {
+  background: #ff0000;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   display: none;
+  overflow: hidden;
 }
 
-.menu-container:hover .menu{
+.menu a {
   display: block;
+  padding: 0.8rem;
+  color: #333;
+  transition: background 0.3s ease;
 }
 
-.menu a{
-  width: 100%;
-  min-width:8rem;
+.menu a:hover {
+  background: #ffcc00;
+  color: white;
+}
+
+.menu-container:hover .menu {
+  display: block;
 }

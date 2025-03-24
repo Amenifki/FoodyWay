@@ -1,5 +1,16 @@
-.container {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: 0.4rem;
+.star {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #ff9900;
+}
+
+.star.half {
+  color: #ffcc00;
+}
+
+.star.empty {
+  color: #ccc;
 }

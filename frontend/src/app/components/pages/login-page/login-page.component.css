@@ -1,27 +1,111 @@
-.container{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-margin-top: 3rem;
+/* Container to center content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-top: 3rem;
 }
 
-.details{
-  width: 28rem;
+/* Form details container */
+.details {
+  width: 30rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-form{
+/* Title styling */
+app-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Styling for the form */
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.error-list{
-  color: rgb(255, 0, 0);
+/* Form input fields with some space */
+text-input {
+  margin-bottom: 1.5rem;
 }
 
-.register{
+/* Register section (link to register page) */
+.register {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Register link styling */
+.register a {
+  font-weight: 600;
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.register a:hover {
+  color: #be780d;
+  text-decoration: underline;
+}
+
+/* Button styling (for default button) */
+button {
+  height: 4rem;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background-color: #ff9900;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c97f11;
+}
+
+/* Errors list (if any form validation errors) */
+.error-list {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Styling for inputs focus */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #c78016;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+/* Input fields */
+text-input input {
+  border: 1px solid #ddd;
+  border-radius: 5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+/* Adding hover effect for inputs */
+text-input input:hover {
+  border-color: #c78016;
 }

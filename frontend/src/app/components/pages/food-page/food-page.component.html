@@ -1,41 +1,49 @@
-
 <div *ngIf="food" class="container">
-  <img [src]="food.imageUrl" [alt]="food.name"/>
+  <!-- Image du produit -->
+  <img [src]="food.imageUrl" [alt]="food.name" />
 
   <div class="details">
     <div class="header">
-      <span class="name">
-        {{food.name}}
-      </span>
-      <span class="favorite {{food.favorite? '': 'not'}}">❤</span>
-    </div>
-    
+      <span class="name">{{ food.name }}</span>
 
+      <!-- Icône Favoris -->
+      <span
+        class="favorite {{ food.favorite ? 'active' : 'not' }}"
+        (click)="toggleFavorite(food, $event)"
+      >
+        ❤
+      </span>
+    </div>
+    <!-- Étoiles de notation -->
+    <div class="stars">
+      <app-star-rating [stars]="food.stars"></app-star-rating>
+    </div>
+
+    <!-- Origines du produit -->
     <div class="origins">
-      <span *ngFor="let origin of food.origins">
-        {{origin}}
-      </span>
+      <span *ngFor="let origin of food.origins">{{ origin }}</span>
     </div>
 
+    <!-- Tags associés -->
     <div class="tags">
-      <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
-        {{tag}}
+      <a *ngFor="let tag of food.tags" routerLink="/tag/{{ tag }}">
+        {{ tag }}
       </a>
     </div>
 
+    <!-- Temps de cuisson -->
     <div class="cook-time">
       <span>
-        Time to cook about <strong>{{food.cookTime}}</strong> minutes
+        Time to cook about <strong>{{ food.cookTime }}</strong> minutes
       </span>
     </div>
 
+    <!-- Prix -->
     <div class="price">
-      <span>
-        {{food.price | currency}}
-      </span>
+      <span>{{ food.price | currency }}</span>
     </div>
 
+    <!-- Bouton Ajouter au panier -->
     <button (click)="addToCart()">Add To Cart</button>
-
   </div>
 </div>

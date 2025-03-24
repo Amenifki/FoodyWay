@@ -23,6 +23,7 @@
     "@types/node": "^20.1.7",
     "frontend": "file:",
     "leaflet": "^1.9.3",
+    "ngx-stars": "^1.6.5",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.1",
     "tslib": "^2.5.0",

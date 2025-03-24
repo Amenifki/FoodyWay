@@ -1,0 +1,77 @@
+<div class="add-product-container">
+  <h2>Add a New Product</h2>
+
+  <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        placeholder="Enter product name"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="price">Price ($)</label>
+      <input
+        id="price"
+        formControlName="price"
+        type="number"
+        placeholder="Enter price"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="tags">Tags</label>
+      <input
+        id="tags"
+        formControlName="tags"
+        type="text"
+        placeholder="e.g. spicy, vegan"
+      />
+    </div>
+
+    <div class="input-group checkbox-group">
+      <label for="favorite">Favorite</label>
+      <input id="favorite" formControlName="favorite" type="checkbox" />
+    </div>
+
+    <div class="input-group">
+      <label for="stars">Rating (1-5)</label>
+      <input id="stars" formControlName="stars" type="number" min="1" max="5" />
+    </div>
+
+    <div class="input-group">
+      <label for="imageUrl">Image URL</label>
+      <input
+        id="imageUrl"
+        formControlName="imageUrl"
+        type="text"
+        placeholder="Paste image URL"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="origins">Origins</label>
+      <input
+        id="origins"
+        formControlName="origins"
+        type="text"
+        placeholder="Enter country of origin"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="cookTime">Cook Time (mins)</label>
+      <input
+        id="cookTime"
+        formControlName="cookTime"
+        type="text"
+        placeholder="e.g. 30 minutes"
+      />
+    </div>
+
+    <button type="submit" [disabled]="foodForm.invalid">Add Product</button>
+  </form>
+</div>

@@ -1,0 +1,59 @@
+<div class="update-food-container">
+  <h2>✏️ Modifier un Produit</h2>
+
+  <form (ngSubmit)="updateFood()" #foodForm="ngForm">
+    <!-- Nom du Produit -->
+    <label for="name">Nom du Produit</label>
+    <input type="text" id="name" [(ngModel)]="food.name" name="name" required />
+
+    <!-- Image -->
+    <label for="imageUrl">Image URL</label>
+    <input
+      type="text"
+      id="imageUrl"
+      [(ngModel)]="food.imageUrl"
+      name="imageUrl"
+      required
+    />
+    <div class="image-preview">
+      <img [src]="food.imageUrl" alt="Product Image" *ngIf="food.imageUrl" />
+    </div>
+
+    <!-- Prix -->
+    <label for="price">Prix (€)</label>
+    <input
+      type="number"
+      id="price"
+      [(ngModel)]="food.price"
+      name="price"
+      required
+      min="1"
+    />
+
+    <!-- Temps de cuisson -->
+    <label for="cookTime">Temps de Cuisson (min)</label>
+    <input
+      type="text"
+      id="cookTime"
+      [(ngModel)]="food.cookTime"
+      name="cookTime"
+      required
+    />
+
+    <!-- Favoris -->
+    <label>
+      <input type="checkbox" [(ngModel)]="food.favorite" name="favorite" />
+      Mettre en Favoris ❤️
+    </label>
+
+    <!-- Boutons -->
+    <div class="buttons">
+      <button type="submit" class="update-button" [disabled]="foodForm.invalid">
+        ✅ Mettre à jour
+      </button>
+      <button type="button" class="cancel-button" (click)="cancelUpdate()">
+        ❌ Annuler
+      </button>
+    </div>
+  </form>
+</div>

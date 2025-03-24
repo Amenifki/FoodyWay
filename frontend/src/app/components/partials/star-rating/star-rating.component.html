@@ -1,8 +1,14 @@
-
-<!--<div class="container">
-    <img
-    *ngFor="let current of [1, 2, 3, 4, 5]"
-    [src]="getStarImage(current)"
-    [ngStyle]="styles"
-    />
-</div>-->
+<div class="stars">
+  <span *ngFor="let star of getFullStars()">
+    <i class="star filled">★</i>
+    <!-- Full star -->
+  </span>
+  <span *ngIf="getHalfStars()">
+    <i class="star half">☆</i>
+    <!-- Half star -->
+  </span>
+  <span *ngFor="let star of getEmptyStars()">
+    <i class="star empty">☆</i>
+    <!-- Empty star -->
+  </span>
+</div>

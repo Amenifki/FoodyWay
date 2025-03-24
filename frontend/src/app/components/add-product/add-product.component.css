@@ -1,0 +1,102 @@
+/* Overall container */
+.add-product-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.add-product-container h2 {
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+label {
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease-in-out;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: 18px;
+  accent-color: #ff9900;
+}
+
+/* Submit button */
+button {
+  background-color: #ff9900;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #e68500;
+}
+
+/* Error styles */
+input.ng-invalid {
+  border-color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .add-product-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
